@@ -32,6 +32,12 @@
   flex-grow: 0;
   border: 1px solid var(--blue);
   border-radius: 999px;
+
+  transition: 1s border;
+}
+
+.Checkbox:hover {
+  border: 1px solid var(--blue-dark);
 }
 .Checkbox input {
   display: none;
@@ -62,10 +68,17 @@ input[type="checkbox"]:checked {
 
   background: var(--purple);
   border-radius: 999px;
+
+  transition: 1s background;
+}
+
+.Checked:hover {
+  background: var(--purple-dark);
 }
 
 .CheckedText {
   text-decoration: line-through;
+  color: var(--gray-300);
 }
 
 .Icon {

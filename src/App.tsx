@@ -1,6 +1,7 @@
 import { Clipboard, PlusCircle } from "phosphor-react";
 import { useState } from "react";
 import Styles from "./App.module.css";
+import { v4 as uuidv4 } from 'uuid';
 
 import Logo from "./assets/Logo.svg";
 import Task from "./Components/Task";
@@ -58,7 +59,7 @@ function App() {
         />
         <button
           onClick={() =>
-            setTasks([...Tasks, { id: NewTask, description: NewTask }])
+            setTasks([...Tasks, { id: uuidv4(), description: NewTask }])
           }
         >
           Criar <PlusCircle size={20} />
@@ -70,7 +71,7 @@ function App() {
             Tarefas criadas<span>{Tasks.length}</span>
           </p>
           <p className={Styles.Done}>
-            Concluídas <span>{CompletedTasks.length}</span>
+            Concluídas <span>{isTasksEmpty ? CompletedTasks.length : `${CompletedTasks.length} de ${Tasks.length}`}</span>
           </p>
         </div>
 
